@@ -1,0 +1,27 @@
+# Research: Investigating the Shelf-Life API for Integration with Inventory
+
+## Purpose
+The API provides valuable information regarding the shelf life of food, which can enhance our app by providing some automation and giving users recommendations.
+
+## Learning
+I expect to learn how to interact with the Shelf-Life API, understand the routes, and determine how to integrate this external data into our application. Specifically, I will focus on:
+- Using the `/search` route to find relevant food guides based on grocery items stored in our database.
+- Using `/guides/:guideId` to retrieve detailed storage information.
+
+## Doing
+I expect to write a new API interaction module in the backend, which will handle:
+- Calling the Shelf-Life API.
+- Processing the data.
+- Updating the inventory database with food shelf-life information and tips.
+  
+I will also need to modify our existing database to store additional fields, such as storage methods and tips for each food item. Specifically, I will write code to map grocery items to the API’s food guides and integrate the results into the UI for users to view.
+
+### Steps include:
+- **Modify SQLite Database Schema**: Add fields for shelf-life duration, recommended storage methods, and storage tips.
+- **Fetch data from the Shelf-Life API** based on the item name when a new grocery item is added or updated.
+- **Call Shelf-Life API** when a new item is added or edited, store the retrieved data in the database, and fetch this data along with grocery items in the API response sent to the frontend.
+- **Front-end adjustments** to display shelf-life information and storage tips.
+- **Testing**: Ensure proper API functionality, UI display, and error handling.
+
+## Task
+- **Shelf Life API Integration**

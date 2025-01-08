@@ -1,0 +1,72 @@
+SQLite Database Schema Design Research!: 
+------------------------------------------------------------------------------------------------
+
+Introduction to Schema Design:
+
+A database schema defines how data is organized within a database; including the tables, columns,
+relationships between them, and constraints. For our GrocerU app, which tracks food inventory
+and syncs with grocery receipts, we are using SQLite—a lightweight, serverless database suitable
+for small- to medium-scale applications.
+
+In addition, GrocerU will feature a user-specific login page, allowing for users to login
+with personal credentials.
+
+------------------------------------------------------------------------------------------------
+
+Why SQLite for GrocerU?
+
+    - Serverless: SQLite doesn't require a separate server, meaning development and deployment 
+    are drastically simplified.
+    - Single Disk File: The entire database is stored within a 
+    single file, making it easier to manage and distribute.
+    - Lightweight: Ideal for smaller applications, also contains no configuration allowing
+    meaning it is ready to use without complex set up. 
+    - Open-Source & Free: Perfect for academic projects such as this one.
+
+------------------------------------------------------------------------------------------------
+
+Steps for Creating a Database Schema with SQLite:
+
+1. Identify Requirements 
+    - Understanding project needs: GrocerU will track users, items, and receipts while
+    associating groceries with specific user accounts 
+    - List data types required for GrocerU:
+      - Users (account data with login credentials)
+      - Items (grocery products)
+      - Reciepts (physical purchase history)
+      - User-item association (grocery lists tied to specific users)
+
+2. Entity Identification (Schema Tables)
+    - In SQLite every table stores data for one entity. In GrocerU, the key tables might be:
+      - Users: To manage individual user accounts (login information)
+      - Items: To track items, including their names, quantity and even expiration date 
+      - Receipts: To store receipt information for purchases
+      - User_Items: To associate specific items with a particular user's account
+      (track personal groceries)
+
+3. Define Attributes (Columns)
+    - For each entity, identify necessary columns :
+      - Users: user_id, username, email, password_hash (login functionality)
+      - Items: item_id, name, quantity, expiration_data, category 
+      - Reciepts: receipt_id, user_id, purchase_date
+      - User_Items: user_id, item_id, desired quantity, priority
+      (user prefernce for certain items)
+
+4. Primary & Foreign Keys
+    - Primary Key: Field in a table which uniquely identifies each row.
+    For example, user_id in User or item_id in Items 
+    - Foreign Key: Used to specify taht values in one table also appear in another table.
+    For example, user_id in User_Items and Receipts pointing to the Users table 
+
+5. Possible Relationships Between Tables
+    - One-to-Many: 'One x-value corresponds to multiple y-values'
+      - One User can have many Receipts and many associated Items
+    - Many-to-Many: 'Multiple x-values correspond to same y-value'
+      - Users can add many items to their grocery lists, and each item can be added by
+      multiple users. Their relationship is handled by User_Items table.
+
+6. Constraints
+    - NOT NULL: Ensures a column cannot be empty, e.g., username, password_hash in Users 
+    - UNIQUE: Ensures no duplicate emails or usernames (all values in specified column(s) are unique)
+    - CHECK: Enforces the values that are inserted or updated in the table/column,
+    e.g., ensuring quantity of items is always greater than 0 

@@ -1,0 +1,35 @@
+services:
+  frontend:
+    image: eggsiebacon/frontend:latest
+    platform: linux/amd64
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    networks:
+      - app-network
+    depends_on:
+      - backend
+    environment:
+      - NODE_ENV=development
+    command: npm start
+  backend:
+    image: eggsiebacon/backend:latest
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    platform: linux/amd64
+    ports:
+      - "5001:5000"
+    volumes:
+      - ./backend:/app
+      - ./backend/database:/app/database
+    networks:
+      - app-network
+    environment:
+      - FLASK_ENV=development
+      - FLASK_APP=app.py
+networks:
+  app-network:
+    driver: bridge
