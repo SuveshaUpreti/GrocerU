@@ -35,19 +35,25 @@ GrocerU was developed to make food inventory management simple and prevent frust
 
 Technologies Used
 
-Python was used for backend development.
+Backend: Python, Flask
 
-Flask was used as the web framework.
+API Testing: Postman
 
-Postman was used for API testing.
+Database: SQLite
 
-SQLite was used for database management.
+Frontend: React, HTML, CSS
 
-React was used for frontend development.
+AI: OpenAI API for automatic categorization of inventory items and location
 
-HTML & CSS were used for styling and structuring the frontend.
+Authentication: Bcrypt, Flask-Bcrypt
 
-AI was used for automatic categorization of inventory items and location.
+Environment Management: Python Dotenv
+
+Data Handling: Pandas
+
+Build Tools: Webpack, Babel, File Loader
+
+Containerization: Docker
 
 
 
@@ -71,4 +77,4 @@ A relational database was included to store, retrieve, and update grocery items.
 
 Meal Planning Assistance:
 
-Meal plan and grocery list generation features were implemented based on users' current inventory. in chat
+Meal plan and grocery list generation features were implemented based on users' current inventory
