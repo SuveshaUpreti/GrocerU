@@ -1,5 +1,5 @@
 A grocery inventory app
-https://groceru-frontend-8594536820.us-central1.run.app/
+
 
 App Overview
 
