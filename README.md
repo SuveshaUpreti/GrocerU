@@ -1,4 +1,9 @@
 A grocery inventory app
+![grocer](https://github.com/user-attachments/assets/5834f4b2-f2c8-4c58-acca-487affb5dcbf)
+
+![grocer2](https://github.com/user-attachments/assets/d84ed229-a884-492c-ac8c-3060c02b432d)
+
+
 
 
 App Overview
